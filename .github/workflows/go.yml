@@ -20,5 +20,9 @@ jobs:
 
     - name: Build
       run: go get github.com/atotto/clipboard && GOOS=windows GOARCH=amd64 go build -v ./... && ls ./
-      
+
+    - uses: actions/upload-artifact@v2
+      with:
+        name: windows
+        path: ./kc.exe
       
